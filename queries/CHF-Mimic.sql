@@ -1,4 +1,4 @@
-select dt.text from 
+select dt.text, 'CHF' as label from
       (select  dx.subject_id, dx.hadm_id, dx.code, dx.sequence,  
                   round((LENGTH(n.text) - LENGTH(REPLACE(n.text, 'hyperinflated', '')))/LENGTH('hyperinflated')) as hyperinflated,
                   round((LENGTH(n.text) - LENGTH(REPLACE(n.text, 'pulmonary edema', '')))/LENGTH('pulmonary edema')) as edema,

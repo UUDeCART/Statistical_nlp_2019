@@ -1,4 +1,4 @@
-select dt.text from 
+select dt.text, 'COPD' as label from from 
       (select  dx.subject_id, dx.hadm_id, dx.code, dx.sequence, 
                   round((LENGTH(n.text) - LENGTH(REPLACE(n.text, 'bronchitis', '')))/LENGTH('bronchitis')) as bronchitis,
                   round((LENGTH(n.text) - LENGTH(REPLACE(n.text, 'copd', '')))/LENGTH('copd')) as copd,

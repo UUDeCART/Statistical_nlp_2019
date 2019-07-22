@@ -1,4 +1,4 @@
-select dt.text from 
+select dt.text, "PNA-POS" as label from 
       (select  dx.subject_id, dx.hadm_id, n.charttime, dx.code, dx.sequence, 
                round((LENGTH(n.text) - LENGTH(REPLACE(n.text, 'pneumonia', '')))/LENGTH('pneumonia')) as pneumonia, 
                round((LENGTH(n.text) - LENGTH(REPLACE(n.text, 'infiltrate', '')))/LENGTH('infiltrate')) as infiltrate, 
