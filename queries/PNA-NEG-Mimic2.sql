@@ -1,4 +1,4 @@
-select dt.text from 
+select dt.text, "PNA-NEG" as label from 
        (select  dx.subject_id, dx.hadm_id, n.charttime, dx.code, dx.sequence, 
                 n.text 
         from noteevents n 
